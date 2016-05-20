@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp">
+<head>
+<meta charset="utf-8"/>
+<title>JAVASCRIPT TRAINNING2</title>
+<style type="text/css">
+table{
+	width: 80%;
+	height: 40px;
+}
+
+h2 {
+	text-indent: 110px;
+	color: #069;
+}
+th,td {
+	width: 25%;
+}
+
+tbody > tr{
+	background-color: #39F!important;
+}
+
+form {
+	text-indent: 110px;
+	padding: 10px 0px 30px;
+}
+
+input {
+	color: #09F;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div id="taget" ng-controller="secondController">
+	<h2>Weather forcast for {{ city }}</h2>
+    <form ng-submit="dayForcast()">
+    	<input type="button" value="2 days forcast" class="btn" ng-class="{'bg-primary':days==='2'}" ng-click = "two()">
+        <input type="button" value="5 days forcast" class="btn" ng-click = "five()" ng-class="{'bg-primary':days==='5'}">
+        <input type="button" value="7 days forcast" class="btn" ng-click = "seven()" ng-class="{'bg-primary':days==='7'}">
+    </form>
+    
+    <div ng-repeat="w in weatherResult.list">
+    	<div class="row">
+        	<div class="col-sm-12 col-md-12">
+            	<table>
+                	<caption>Forcast for {{ city }} {{ convertToDate(w.dt)| date: "MMM d , y" }}</caption>
+                    <thead>
+                    	<tr>
+                        	<th><h3>Date</h3></th>
+                            <th><h3>Morning</h3></th>
+                            <th><h3>Day</h3></th>
+                            <th><h3>Night</h3></th>
+                        </tr>
+                    </thead>
+                     <tbody>
+                    	<tr>
+                        	<td><h4>{{ convertToDate(w.dt)| date: "MMM d , y" }}</h4></td>
+                            <td><h3>{{ convertToCelcius(w.temp.morn) }}<sup>o</sup>C</h3></td>
+                            <td><h3>{{ convertToCelcius(w.temp.day) }}<sup>o</sup>C</h3></td>
+                            <td><h3>{{ convertToCelcius(w.temp.night) }}<sup>o</sup>C</h3></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr/>            	
+            </div>
+        </div>
+    </div>   
+</div>
+
+</body>
+</html>

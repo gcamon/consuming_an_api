@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="myApp">
+<head>
+<meta charset="utf-8" /> 
+<title>JAVASCRIPT TRAINING</title>
+<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+<style type="text/css">
+table{
+	width: 300px;
+	height: 200px;
+	margin: 0 auto;
+	
+}
+
+td#subject{
+	background-color: #999;
+	color: #fff;
+	text-align: center;
+	font-size: 19px;
+}
+
+td{
+	width: 50px;
+	background-color: #606;
+	color: #fff;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 16px;
+}
+
+#score1 {
+	background-color: #900; 
+}
+
+#score2{
+	background-color: #FC3;
+}
+
+#score3 {
+	background-color: #F0F; 
+}
+
+#score4 {
+	background-color: #63C;
+	color:#fff; 
+}
+
+</style>
+</head>
+<body>
+	<div class="container" ng-app = "myApp">
+    	<div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <a href="/?#/" style="padding-left: 30px;">Home Page</a>
+                <!--<a href="#/second/:num" style="padding-left: 30px;">Second Page</a>-->
+            </div>
+      </div> 
+    	<div ng-view>
+      </div>
+
+      
+
+
+<script type="application/javascript" src="/assets/js/source.js"></script>
+<script type="application/javascript" src="/assets/js/ngresource.js"></script>
+<script type="application/javascript" src="/assets/js/ngroute.js"></script>
+<script type="application/javascript" src="/assets/js/mycode.js"></script>
+</body>
+</html>
+

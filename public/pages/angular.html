@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="myApp">
+<head>
+<meta charset="utf-8" />
+<title>LEARNING ANGULARJS</title>
+<style type="text/css">
+.bt{
+	width: 50%;
+	background-color: #FCC;
+	border-radius: 5px;
+	height: 30px;
+	border: none;
+	font-size: 18px;
+}
+.for{
+	display: block;
+	margin-top: 20px;
+}
+
+span{
+	color: #903;
+}
+
+</style>
+</head>
+
+<body>	
+	<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-controller= 'mainController'>
+                    <h2>Forcast by city </h2>
+                    <form ng-submit = "submit()">
+                        <input type="text" ng-model = "city" class="bt"/><br/>
+                        <span ng-model="format">{{format()}}</span>
+                        <input type="submit" value="Get forcast" class="btn btn-primary for"/>
+                    </form>                        
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
